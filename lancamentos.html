@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://images.vexels.com/media/users/3/158194/isolated/preview/11507ef5615c554fe88fc22c86768501-icone-de-terra-simples.png"
+      type="image/x-icon"
+    />
+    <title>Lançamentos</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-mobile">
+        <h1>Portal Filmes & Séries</h1>
+        <img
+          class="icone-menu"
+          src="./Site_Noticias_Serasa/assets/menu.svg"
+          alt="Menu"
+        />
+      </div>
+
+      <div class="menu-mobile">
+        <nav>
+          <a href="index.html">Inicío</a>
+          <a href="pagina-filmes.html">Filmes</a>
+          <a href="">Séries</a>
+          <a href="lancamentos.html">Lançamentos</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+
+      <nav>
+        <a href="index.html">Inicío</a>
+        <a href="pagina-filmes.html">Filmes</a>
+        <a href="">Séries</a>
+        <a href="">Lançamentos</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container-noticias">
+        <article class="noticia-filme-serie">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/pt/thumb/0/0b/The_Naked_Gun_2025.webp/333px-The_Naked_Gun_2025.webp.png"
+            alt="Banner Corra que a policia vem ai"
+          />
+          <h3>Corra que a Polícia Vem Aí (2025)</h3>
+          <p>
+            Quando o lendário tenente Frank Drebin falece, seu filho, Frank
+            Drebin Jr., assume o legado como policial — mas com muito mais
+            atrapalho do que perícia. Ele é convocado para liderar o esquadrão
+            de seu pai e embarca numa missão cheia de confusões: há uma
+            conspiração perigosa em curso, bombas prestes a explodir, vilões
+            esquisitos por toda parte — e só Frank Jr. possui as habilidades
+            meio tortas necessárias para salvar o dia. Com perseguições
+            absurdas, trocadilhos, humor pastelão e referências ao clássico, ele
+            vai provar que, mesmo no meio do caos, dá pra fazer justiça — embora
+            a diversão fique por conta de quantas besteiras ele vai aprontar no
+            caminho.
+          </p>
+        </article>
+
+        <article class="noticia-filme-serie">
+          <img
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTWsV7y2BGTNkChdEWPilzL---EeZzNx6jiNfs732vzaXZK10kI"
+            alt="Banner de Um maluco no golpe 2"
+          />
+          <h3>Um maluco no golfe 2</h3>
+          <p>
+            Depois de uma sequência de vitórias improváveis, o excêntrico Carl
+            Spackler acha que finalmente encontrou seu ritmo — mas seu
+            tranquilão estilo “golfe zen” é interrompido quando um torneio
+            internacional chega à cidade, atraindo jogadores profissionais de
+            renome, patrocinadores impacientes e competidores dispostos a tudo
+            para ganhar. Com seu senso de justiça torto, suas tacadas
+            desajeitadas e uma parafernália de gadgets malucos, Carl embarca
+            numa jornada hilária tentando provar que não importa o nível dos
+            adversários — o coração (e a teimosia) contam muito mais no campo de
+            golfe. Entre pancadas de bola que vão pro espaço, drinques que
+            atravessam greens e adversários mais preocupados com fama do que com
+            o jogo, Carl vai mostrar que, mesmo quando tudo parece estar contra
+            ele, vale a pena arremessar — às vezes literalmente — para
+            conquistar sua própria vitória.
+          </p>
+        </article>
+
+        <article class="noticia-filme-serie">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmKFi7EpHvkB9ZiXZcwvJ2aRXYCi5Fu_pvMW-0c_Q9QwdXYNNQ"
+            alt="Banner de F1"
+          />
+          <h3>Spider-Man Home Coming</h3>
+          <p>
+            Sonny Hayes foi a grande promessa da Fórmula 1 nos anos 90 — até um
+            acidente devastador pôr fim à sua carreira. Trinta anos depois,
+            vivendo como piloto “por aluguel”, ele recebe uma proposta
+            surpreendente: voltar ao grid para ajudar o APXGP, equipe em
+            dificuldade, a reconquistar seu prestígio. Ao lado do promissor
+            novato Joshua Pearce, Sonny tenta — entre punições, rivalidades
+            internas e fantasmas do passado — mostrar que ainda pode ser “o
+            melhor do mundo”. Mas em F1, não basta acelerar: é preciso coragem,
+            lealdade… e um pouco de redenção.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Portal Filmes & Séries. Desenvolvido por Matheus Lima</p>
+    </footer>
+  </body>
+  <script>
+    const iconeMenu = document.querySelector(".icone-menu");
+    const menuAtivo = document.querySelector(".menu-mobile");
+    iconeMenu.addEventListener("click", () => {
+      menuAtivo.classList.toggle("menu-ativo");
+    });
+  </script>
 </html>

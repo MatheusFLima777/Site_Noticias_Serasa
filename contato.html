@@ -7,7 +7,8 @@
   <link rel="shortcut icon"
     href="https://images.vexels.com/media/users/3/158194/isolated/preview/11507ef5615c554fe88fc22c86768501-icone-de-terra-simples.png"
     type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contato.css">
   <title>Contato</title>
 </head>
 
@@ -15,7 +16,7 @@
   <header>
     <div class="header-mobile">
       <h1>Portal Filmes & Séries</h1>
-      <img class="icone-menu" src="./image/icone-menu.svg" alt="Menu">
+      <img class="icone-menu" src="./Site_Noticias_Serasa/assets/menu.svg" alt="Menu">
     </div>
 
     <div class="menu-mobile">
@@ -23,7 +24,7 @@
         <a href="index.html">Inicío</a>
         <a href="pagina-filmes.html">Filmes</a>
         <a href="">Séries</a>
-        <a href="">Lançamentos</a>
+        <a href="lancamentos.html">Lançamentos</a>
         <a href="contato.html">Contato</a>
       </nav>
     </div>
@@ -32,33 +33,37 @@
       <a href="index.html">Inicío</a>
       <a href="pagina-filmes.html">Filmes</a>
       <a href="">Séries</a>
-      <a href="">Lançamentos</a>
+      <a href="lancamentos.html">Lançamentos</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
-  
+
   <main>
-    <section>
+    <section class="secao-formulario">
       <h2>Formulário para contato</h2>
 
-      <form action="">
+        <form
+          id="meu-formulario"
+          action="https://formspree.io/f/xrbylwwe"
+          method="POST"
+        >
         <div>
-          <label for="nome">Nome</label>
+          <label for="nome" class="margem-label">Nome</label>
           <input type="text" name="nome" id="nome">
         </div>
 
         <div>
-          <label for="sobrenome">Sobrenome</label>
+          <label for="sobrenome" class="margem-label">Sobrenome</label>
           <input type="text" name="sobrenome" id="sobrenome">
         </div>
 
         <div>
-          <label for="idade">Idade</label>
+          <label for="idade" class="margem-label">Idade</label>
           <input type="number" name="idade" id="idade">
         </div>
 
         <div>
-          <label for="dataNascimento">Data de nascimento</label>
+          <label for="dataNascimento" class="margem-label">Data de nascimento</label>
           <input type="date" name="dataNascimento" id="dataNascimento">
         </div>
 
@@ -82,21 +87,88 @@
         </div>
 
         <div>
-          <label for="email">Email</label>
+          <h3>Gênero</h3>
+          <div>
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="genero" id="masculino">
+          </div>
+
+          <div>
+            <label for="feminino">Feminino</label>
+            <input type="radio" name="genero" id="feminino">
+          </div>
+
+          <div>
+            <label for="outro">Outro</label>
+            <input type="radio" name="genero" id="outro">
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="margem-label">Email</label>
           <input type="email" name="email" id="email">
+        </div>
+
+        <div>
+          <label for="assunto" class="margem-label">Assunto</label>
+          <select name="assunto" id="assunto">
+            <option></option>
+            <option value="reclamações">Reclamações</option>
+            <option value="elogios">Elogios</option>
+            <option value="duvidas">Dúvidas</option>
+            <option value="outros">Outros</option>
+          </select>
         </div>
 
         <div>
           <label for="mensagem">Digite sua mensagem</label>
           <textarea name="mensagem" id="mensagem"></textarea>
         </div>
+
+        <button type="submit">Enviar formulário</button>
       </form>
     </section>
+    
+    <p id="status-formulario-ok"></p>
+    <p id="status-formulario-not-ok"></p>
   </main>
 
   <footer>
-    <p>&copy; 2025 Portal Filmes & Séries. Desenvolvido por Vitor Moutim.</p>
+    <p>&copy; 2025 Portal Filmes & Séries. Desenvolvido por Matheus Lima</p>
   </footer>
 </body>
+
+<script>
+  const iconeMenu = document.querySelector('.icone-menu');
+  const menuAtivo = document.querySelector('.menu-mobile');
+  iconeMenu.addEventListener('click', () => {
+    menuAtivo.classList.toggle('menu-ativo');
+  });
+</script>
+
+<script>
+  var form = document.getElementById("meu-formulario");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var statusOk = document.getElementById("status-formulario-ok");
+    var statusNotOk = document.getElementById("status-formulario-not-ok");
+
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      statusOk.innerHTML = "Sucesso! Obrigado por enviar!";
+      form.reset()
+    }).catch(error => {
+      statusNotOk.innerHTML = "Ops! Houve um erro ao enviar seu formulario. Revise as informacoes e envie novamente"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
 
 </html>

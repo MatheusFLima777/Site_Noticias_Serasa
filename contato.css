@@ -1,0 +1,35 @@
+.secao-formulario h2 {
+    margin-bottom: 20px;
+  }
+  
+  .secao-formulario form input {
+    border-radius: 10px;
+    border: 0.5px solid black;
+  }
+  
+  .secao-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+  }
+  
+  .secao-formulario form {
+    text-align: left;
+  }
+  
+  .margem-label {
+    margin-right: 15px;
+  }
+  
+  .secao-formulario {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .secao-formulario form button {
+    background-color: crimson;
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+  }

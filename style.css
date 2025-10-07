@@ -1,0 +1,217 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: crimson;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+.menu-mobile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: crimson;
+  color: white;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  pointer-events: none; 
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 15px;
+  margin-left: 15px;
+  transition: color 0.4s;
+}
+
+header nav a:hover {
+  color: blueviolet;
+}
+
+header nav {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+body {
+  background-color: #ddd;
+}
+
+main {
+  -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.3);  
+  box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.3);
+  width: 900px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+  margin-top: 25px;
+  border-radius: 10px;
+}
+
+.noticia-principal img {
+  width: 520px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.noticia-principal {
+  background-color: wheat;
+  padding: 30px 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2); 
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+.noticia-principal h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.noticia-filme-serie img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.noticia-filme-serie {
+  border-radius: 10px;
+  width: 250px;
+  background-color: #ddd;
+  padding: 20px 15px;
+}
+
+.noticia-filme-serie h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.container-noticias {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.menu-mobile.menu-ativo {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icone-menu {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 80vw;
+  }
+
+  .noticia-filme-serie {
+    width: 27.5%;
+  }
+
+  .noticia-filme-serie img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .container-noticias {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .noticia-filme-serie {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .noticia-filme-serie img {
+    height: 100%;
+  }
+
+  .noticia-principal img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  .menu-mobile nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-mobile nav a {
+    font-size: 20px;
+    padding: 15px 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.505);
+  }
+
+  .icone-menu {
+    display: block;
+  }
+
+  header h1 {
+    font-size: 25px;
+    text-align: left;
+  }
+
+  header {
+    padding: 20px 30px;
+  }
+
+  .header-mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-mobile img {
+    width: 30px;
+  }
+
+  .header-mobile img:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 75vw;
+  }
+
+  footer {
+    padding: 20px 15px;
+    font-size: 15px;
+  }
+}
